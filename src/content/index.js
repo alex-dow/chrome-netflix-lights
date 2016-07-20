@@ -37,6 +37,11 @@ function setupVideo() {
   }, 100);
 }
 
+function teardownVideo() {
+  log.msg('Teardown setup');
+  chrome.runtime.sendMessage('stop');
+}
+
 function onUnload(e) {
   log.msg('unload');
   log.msg(e);
@@ -48,14 +53,12 @@ function onPopstate(e) {
 }
 
 setInterval(function() {
-  log.msg('is_watching = ', is_watching);
-  console.log('is_watching:', is_watching);
-  log.msg('is_watching: ' + is_watching);
   if (location.href.indexOf('/watch/') > -1 && is_watching == false) {
     is_watching = true;
     setupVideo();
   } else if (location.href.indexOf('/watch/') == -1 && is_watching == true) {
     is_watching = false;
+    teardownVideo();
   }
 }, 1000);
     
