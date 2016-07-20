@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Netflix Interfacer",
   "content_scripts": [{
-    "matches": ["https://www.netflix.com/watch/*"],
+    "matches": ["https://www.netflix.com/*","http://www.netflix.com/*","http://netflix.com/*","https://netflix.com/*"],
     "js": ["build/content.js"],
     "run_at": "document_end"
   }],
