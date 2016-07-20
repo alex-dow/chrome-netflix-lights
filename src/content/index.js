@@ -1,6 +1,7 @@
 var log = require('../common/logging.js');
 
 var is_watching = false;
+var is_playing = false;
 
 function isPlaying(vid) {
 
@@ -19,16 +20,19 @@ function setupVideo() {
 
       vid.addEventListener('play', function() {
         chrome.runtime.sendMessage('play');
+        is_playing = true;
         log.msg('Netflix video has started playing');
       });
 
       vid.addEventListener('pause', function() {
         chrome.runtime.sendMessage('stop');
+        is_playing = false;
         log.msg('Netflix video has stopped playing');
       });
 
       if (isPlaying(vid)) {
         chrome.runtime.sendMessage('play');
+        is_playing = true;
         log.msg('Netflix is actually already playing!');
       }
     } else {
@@ -39,6 +43,7 @@ function setupVideo() {
 
 function teardownVideo() {
   log.msg('Teardown setup');
+  is_playing = false;
   chrome.runtime.sendMessage('stop');
 }
 
@@ -58,8 +63,16 @@ setInterval(function() {
     setupVideo();
   } else if (location.href.indexOf('/watch/') == -1 && is_watching == true) {
     is_watching = false;
+    is_playing = false;
     teardownVideo();
   }
 }, 1000);
     
 log.msg('Netflixer loaded');
+
+window.onbeforeunload = function(e) {
+  if (is_watching == true) {
+    log.msg('User navigated away from /watch/ url');
+    teardownVideo();
+  }
+}
