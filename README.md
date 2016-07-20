@@ -20,5 +20,4 @@ $ grunt
 
 Once built, you can visit chrome://extenions in chrome, enable Developer Mode, then click on Load Unpacked Extension and navigate to chrome-netflix-lights/extension
 
-
-
+Example video: https://www.youtube.com/watch?v=TahyzpIB2PE
