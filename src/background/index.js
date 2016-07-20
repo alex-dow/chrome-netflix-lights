@@ -7,6 +7,7 @@ chrome.management.getAll(function(apps) {
   for (var i = 0; i < apps.length; i++) {
     if (apps[i].shortName == 'Limitless LED Proxy') {
       app = apps[i];
+      log.msg('Limitless LED Proxy app detected');
       return;
     }
   }
