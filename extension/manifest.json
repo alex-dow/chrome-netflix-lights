@@ -9,7 +9,8 @@
     "run_at": "document_end"
   }],
   "permissions": [
-    "management"
+    "management",
+    "storage"
   ],
   "background": {
     "scripts": ["build/background.js"]

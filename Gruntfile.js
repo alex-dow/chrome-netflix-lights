@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-sass');
 
   var browserifyOptions = {
@@ -33,7 +34,8 @@ module.exports = function(grunt) {
 
   var sassTasks = {
     options: {
-      sourceMap: true
+      sourceMap: true,
+      includePaths: ['./node_modules/bootstrap-sass/assets/stylesheets','node_modules/bootstrap-slider/src/sass']
     },
     app: {
       files: {
@@ -78,9 +80,20 @@ module.exports = function(grunt) {
     }
   };
 
+  var serverOptions = {
+    server: {
+      options: {
+        base: './extension',
+        keepalive: true
+      }
+    }
+  }
+      
+
   grunt.initConfig({
     manifest: grunt.file.readJSON('./extension/manifest.json'),
     browserify: browserifyTasks,
+    connect: serverOptions,
     clean: {
       build: ['extension/build']
     },

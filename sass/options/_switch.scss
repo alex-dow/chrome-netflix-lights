@@ -1,0 +1,84 @@
+.onoffswitch {
+    position: relative; width: 60px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 36px; padding: 0; line-height: 36px;
+    border: 2px solid #CCCCCC; border-radius: 36px;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 36px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 22px;
+    border: 2px solid #CCCCCC; border-radius: 36px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #49E845;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #49E845;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+}
+
+
+
+.master-switch {
+
+  .master-switch-checkbox {
+    display: none;
+  }
+
+  .master-switch-checkbox:checked + .master-switch-label {
+    animation: ms1 1.5s ease-in-out 1;
+    background-color: #05f509;
+//    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    color: #232323;
+  }
+
+  .master-switch-label {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #dadada;
+    display: block;
+    cursor: pointer;
+    padding: 4px;
+    width: 100px;
+    text-align: center;
+    xline-height: 25px;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    background-color: #333333;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    box-shadow: none;
+
+    transition: all 0.3s ease-in 0s;
+
+    span: {
+      //display: inline-block;
+      //vertical-align: middle;
+      //line-height: normal;
+
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@keyframes ms1 {
+  10% { background-color: #ffffff; }
+  100% { background-color: #05f509; }
+}

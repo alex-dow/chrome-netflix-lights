@@ -1,5 +1,14 @@
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap";
+@import "bootstrap-slider";
+// @import "switch";
+@import "tabs";
 
 body {
-  margin: 10px;
+//  margin: 10px;
 }
+
+section {
+  display: none;
+  padding: 10px;
+}
+

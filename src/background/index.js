@@ -15,6 +15,8 @@ chrome.management.getAll(function(apps) {
   log.err('Unable to find the Limitless LED Proxy app. You must install this app before using Netflixer');
 });
 
+log.msg('Loading settings');
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   log.msg('Received message from content script:');
   log.msg(request);

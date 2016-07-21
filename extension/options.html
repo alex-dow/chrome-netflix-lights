@@ -5,21 +5,218 @@
   <link rel="stylesheet" href="build/options.css">
 </head>
 <body>
-<form id="options-form">
+<ul id="tabs">
+  <li>
+    <a href="#global">Global</a>
+  </li>
+  <li>
+    <a href="#group1">Group 1</a>
+  </li>
+  <li>
+    <a href="#group2">Group 2</a>
+  </li>
+  <li>
+    <a href="#group3">Group 3</a>
+  </li>
+  <li>
+    <a href="#group4">Group 4</a>
+  </li>
+</ul>
+
+<section id="global-settings">
+  <h3>Global Settings</h3>
   <div class="checkbox">
-    <label><input type="checkbox"> Enable Group 1</label>
+    <label>
+      <input type="checkbox" id="global-enable-start-color"> Enable Global Starting Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="global-start-color">
+      </div>
+    </div>
   </div>
   <div class="checkbox">
-    <label><input type="checkbox"> Enable Group 2</label>
+    <label>
+      <input type="checkbox" id="global-enable-end-color"> Enable Global Ending Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="global-end-color">
+      </div>
+    </div>
   </div>
   <div class="checkbox">
-    <label><input type="checkbox"> Enable Group 3</label>
+    <label>
+      <input type="checkbox" id="global-enable-fade-speed"> Enable Global Fade Speed
+    </label>
+  </div>
+  <input type="text" class="form-control" id="global-fade-speed">
+  <div class="form-group">
+    <button class="btn btn-primary" role="save" id="btn-save-global">Save</button> <button class="btn" role="reset" id="btn-reset-global">Reset</button>
+  </div>
+</section>
+
+<section id="group1-settings">
+  <h3>Group 1 Settings</h3>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group1-enable-start-color"> Enable Starting Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group1-start-color">
+      </div>
+    </div>
   </div>
   <div class="checkbox">
-    <label><input type="checkbox"> Enable Group 4</label>
+    <label>
+      <input type="checkbox" id="group1-enable-end-color"> Enable Ending Color
+    </label>
   </div>
-  <button type="submit" class="btn btn-primary">Save</button>
-</form>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group1-end-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group1-enable-fade-speed"> Enable Fade Speed
+    </label>
+  </div>
+  <input type="text" class="form-control" id="group1-fade-speed">
+  <div class="form-group">
+    <button class="btn btn-primary" role="save" id="btn-save-group1">Save</button> <button class="btn" id="btn-reset-group1" role="reset">Reset</button>
+  </div>
+</section>
+
+<section id="group2-settings">
+  <h3>Group 2 Settings</h3>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group2-enable-start-color"> Enable Starting Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group2-start-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group2-enable-end-color"> Enable Ending Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group2-end-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group2-enable-fade-speed"> Enable Fade Speed
+    </label>
+  </div>
+  <input type="text" class="form-control" id="group2-fade-speed">
+  <div class="form-group">
+    <button class="btn btn-primary" role="save" id="btn-save-group2">Save</button> <button class="btn" id="btn-reset-group2" role="reset">Reset</button>
+  </div>
+</section>
+
+<section id="group3-settings">
+  <h3>Group 3 Settings</h3>
+  <div class="checkbox">
+    <label>
+       <input type="checkbox" id="group3-enable-start-color"> Enable Starting Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group3-start-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group3-enable-end-color"> Enable Ending Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group3-end-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group3-enable-fade-speed"> Enable Fade Speed
+    </label>
+  </div>
+  <input type="text" class="form-control" id="group3-fade-speed">
+  <div class="form-group">
+    <button class="btn btn-primary" role="save" id="btn-save-group3">Save</button> <button class="btn" id="btn-reset-group3" role="reset">Reset</button>
+  </div>
+</section>
+
+<section id="group4-settings">
+  <h3>Group 4 Settings</h3>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group4-enable-start-color"> Enable Starting Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group4-start-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group4-enable-end-color"> Enable Ending Color
+    </label>
+  </div>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">#</div>
+        <input type="text" class="form-control jscolor" id="group4-end-color">
+      </div>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="group4-enable-fade-speed"> Enable Fade Speed
+    </label>
+  </div>
+  <input type="text" class="form-control" id="group4-fade-speed">
+  <div class="form-group">
+    <button class="btn btn-primary" role="save" id="btn-save-group4">Save</button> <button class="btn btn-reset" role="reset" id="btn-reset-group4">Reset</button>
+  </div>
+</section>
 
 <script src="build/options.js"></script>
 </body>
